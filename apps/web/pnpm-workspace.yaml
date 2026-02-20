@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
+
+onlyBuiltDependencies:
+  - '@heroui/shared-utils'
+  - core-js

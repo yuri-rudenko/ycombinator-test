@@ -1,0 +1,27 @@
+{
+  "location": {
+    "id": "L0WG8MY675NMC",
+    "name": "Oakland Treatmobile",
+    "address": {
+      "address_line_1": "1955 Broadway",
+      "locality": "Oakland",
+      "administrative_district_level_1": "CA",
+      "postal_code": "94612"
+    },
+    "timezone": "UTC",
+    "capabilities": [
+      "CREDIT_CARD_PROCESSING",
+      "AUTOMATIC_TRANSFERS"
+    ],
+    "status": "ACTIVE",
+    "created_at": "2026-02-18T13:32:55.331Z",
+    "merchant_id": "ML5NCMD0YN95G",
+    "country": "US",
+    "language_code": "en-US",
+    "currency": "USD",
+    "business_name": "Default Test Account",
+    "type": "MOBILE",
+    "description": "Mobile dog treats and toys in Oakland",
+    "mcc": "7299"
+  }
+}

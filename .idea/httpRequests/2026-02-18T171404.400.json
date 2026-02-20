@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "code": "BAD_REQUEST",
+      "detail": "Location names must be unique within a merchant account",
+      "category": "INVALID_REQUEST_ERROR"
+    }
+  ]
+}

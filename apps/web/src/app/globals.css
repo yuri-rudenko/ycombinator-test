@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin '././hero.ts';
+@source './node_modules/@heroui/theme/dist!**!*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+@config "../../tailwind.config.js";
+
+@layer base {
+    body {
+        @apply bg-background text-foreground transition-colors duration-300;
+
+        background-attachment: fixed;
+        background-image: linear-gradient(
+                to bottom,
+                hsl(var(--heroui-background)),
+                hsl(var(--heroui-content2))
+        );
+    }
+}
+
+html {
+    min-height: 100%;
+}

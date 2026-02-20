@@ -1,0 +1,192 @@
+@accessToken = EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+@baseUrl = https://connect.squareupsandbox.com/v2
+@locationId = L7D7MS8RHHSH6
+
+### 1. Получить список всех локаций (Проверка связи)
+GET {{baseUrl}}/locations
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+### 2. Создать локацию 1: Oakland Treatmobile
+POST {{baseUrl}}/locations
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "location": {
+    "name": "Oakland Treatmobile",
+    "description": "Mobile dog treats and toys in Oakland",
+    "address": {
+      "address_line_1": "1955 Broadway",
+      "locality": "Oakland",
+      "administrative_district_level_1": "CA",
+      "postal_code": "94612"
+    },
+    "status": "ACTIVE",
+    "type": "MOBILE"
+  }
+}
+
+### 3. Создать локацию 2: Downtown Cafe (Для проверки фильтрации)
+POST {{baseUrl}}/locations
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "location": {
+    "name": "Downtown Cafe",
+    "description": "Classic city center spot",
+    "address": {
+      "address_line_1": "100 Main St",
+      "locality": "San Francisco",
+      "administrative_district_level_1": "CA",
+      "postal_code": "94105"
+    },
+    "status": "ACTIVE",
+    "type": "PHYSICAL"
+  }
+}
+
+### 4. Создать локацию 3: Closed Shop (Для проверки INACTIVE статуса)
+POST {{baseUrl}}/locations
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "location": {
+    "name": "Old Closed Shop",
+    "description": "Should not be visible on frontend",
+    "address": {
+      "address_line_1": "Abandoned St 1",
+      "locality": "Ghost Town",
+      "administrative_district_level_1": "CA",
+      "postal_code": "00000"
+    },
+    "status": "INACTIVE"
+  }
+}
+
+###
+
+POST {{baseUrl}}/catalog/search
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "location": {
+    "name": "Old Closed Shop",
+    "description": "Should not be visible on frontend",
+    "address": {
+      "address_line_1": "Abandoned St 1",
+      "locality": "Ghost Town",
+      "administrative_district_level_1": "CA",
+      "postal_code": "00000"
+    },
+    "status": "INACTIVE"
+  }
+}
+
+
+
+### 1. Создаем Категорию "Coffee"
+# Нам нужно сохранить ID категории из ответа, чтобы привязать товар!
+# (WebStorm покажет ID в ответе, скопируй его для следующего шага)
+POST {{baseUrl}}/catalog/object
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "idempotency_key": "{{$uuid}}",
+  "object": {
+    "type": "CATEGORY",
+    "id": "#CoffeeCategory",
+    "category_data": {
+      "name": "Coffee"
+    }
+  }
+}
+
+### 2. Создаем Товар "Flat White" (Привязан к локации!)
+# Обрати внимание на present_at_location_ids — это решает проблему пустого массива.
+POST {{baseUrl}}/catalog/object
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "idempotency_key": "{{$uuid}}",
+  "object": {
+    "type": "ITEM",
+    "id": "#FlatWhite",
+    "present_at_all_locations": false,
+    "present_at_location_ids": ["{{locationId}}"],
+    "item_data": {
+      "name": "Flat White",
+      "description": "Smooth espresso with microfoam",
+      "category_id": "#CoffeeCategory",
+      "variations": [
+        {
+          "type": "ITEM_VARIATION",
+          "id": "#FlatWhiteRegular",
+          "item_variation_data": {
+            "name": "Regular",
+            "pricing_type": "FIXED_PRICING",
+            "price_money": {
+              "amount": 450,
+              "currency": "USD"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+### 3. Создаем Категорию "Breakfast"
+POST {{baseUrl}}/catalog/object
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "idempotency_key": "{{$uuid}}",
+  "object": {
+    "type": "CATEGORY",
+    "id": "#BreakfastCategory",
+    "category_data": {
+      "name": "Breakfast"
+    }
+  }
+}
+
+### 4. Создаем Товар "Avocado Toast"
+POST {{baseUrl}}/catalog/object
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "idempotency_key": "{{$uuid}}",
+  "object": {
+    "type": "ITEM",
+    "id": "#AvocadoToast",
+    "present_at_all_locations": false,
+    "present_at_location_ids": ["{{locationId}}"],
+    "item_data": {
+      "name": "Avocado Toast",
+      "description": "Sourdough bread with poached egg",
+      "category_id": "#BreakfastCategory",
+      "variations": [
+        {
+          "type": "ITEM_VARIATION",
+          "id": "#AvoToastStandard",
+          "item_variation_data": {
+            "name": "Standard",
+            "pricing_type": "FIXED_PRICING",
+            "price_money": {
+              "amount": 1200,
+              "currency": "USD"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

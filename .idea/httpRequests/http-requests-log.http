@@ -1,0 +1,252 @@
+POST https://connect.squareupsandbox.com/v2/catalog/object
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+Content-Length: 713
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "idempotency_key": "32efe65a-0e6a-47b4-af25-4f54fe5fbed1",
+  "object": {
+    "type": "ITEM",
+    "id": "#FlatWhite",
+    "present_at_all_locations": false,
+    "present_at_location_ids": ["L7D7MS8RHHSH6"],
+    "item_data": {
+      "name": "Flat White",
+      "description": "Smooth espresso with microfoam",
+      "category_id": "#CoffeeCategory",
+      "variations": [
+        {
+          "type": "ITEM_VARIATION",
+          "id": "#FlatWhiteRegular",
+          "item_variation_data": {
+            "name": "Regular",
+            "pricing_type": "FIXED_PRICING",
+            "price_money": {
+              "amount": 450,
+              "currency": "USD"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+<> 2026-02-18T174213.400.json
+
+###
+
+POST https://connect.squareupsandbox.com/v2/locations
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+Content-Length: 309
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "location": {
+    "name": "Old Closed Shop",
+    "description": "Should not be visible on frontend",
+    "address": {
+      "address_line_1": "Abandoned St 1",
+      "locality": "Ghost Town",
+      "administrative_district_level_1": "CA",
+      "postal_code": "00000"
+    },
+    "status": "INACTIVE"
+  }
+}
+
+<> 2026-02-18T171404.400.json
+
+###
+
+POST https://connect.squareupsandbox.com/v2/locations
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+Content-Length: 309
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "location": {
+    "name": "Old Closed Shop",
+    "description": "Should not be visible on frontend",
+    "address": {
+      "address_line_1": "Abandoned St 1",
+      "locality": "Ghost Town",
+      "administrative_district_level_1": "CA",
+      "postal_code": "00000"
+    },
+    "status": "INACTIVE"
+  }
+}
+
+<> 2026-02-18T153326.200.json
+
+###
+
+POST https://connect.squareupsandbox.com/v2/locations
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+Content-Length: 320
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "location": {
+    "name": "Downtown Cafe",
+    "description": "Classic city center spot",
+    "address": {
+      "address_line_1": "100 Main St",
+      "locality": "San Francisco",
+      "administrative_district_level_1": "CA",
+      "postal_code": "94105"
+    },
+    "status": "ACTIVE",
+    "type": "PHYSICAL"
+  }
+}
+
+<> 2026-02-18T153323.200.json
+
+###
+
+GET https://connect.squareupsandbox.com/v2/locations
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-18T153306.200.json
+
+###
+
+POST https://connect.squareupsandbox.com/v2/locations
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+Content-Length: 333
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "location": {
+    "name": "Oakland Treatmobile",
+    "description": "Mobile dog treats and toys in Oakland",
+    "address": {
+      "address_line_1": "1955 Broadway",
+      "locality": "Oakland",
+      "administrative_district_level_1": "CA",
+      "postal_code": "94612"
+    },
+    "status": "ACTIVE",
+    "type": "MOBILE"
+  }
+}
+
+<> 2026-02-18T153255.200.json
+
+###
+
+GET https://connect.squareupsandbox.com/v2/locations
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-18T153232.200.json
+
+###
+
+GET https://connect.squareupsandbox.com/v2/locations
+Square-Version: 2026-01-22
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-18T152458.200.json
+
+###
+
+GET https://connect.squareup.com/v2/locations
+Square-Version: 2026-01-22
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-18T152103.401.json
+
+###
+
+POST https://connect.squareup.com/v2/catalog/search
+Square-Version: 2026-01-22
+Authorization: Bearer EAAAl6s0shLmomj8DDIB4HInJKY5IyFtYqwCOba-joKYBD9BU9E31tafoQhZBpW8
+Content-Type: application/json
+Content-Length: 164
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "object_types": [
+    "ITEM"
+  ],
+  "query": {
+    "prefix_query": {
+      "attribute_name": "name",
+      "attribute_prefix": "tea"
+    }
+  },
+  "limit": 100
+}
+
+<> 2026-02-18T151535.401.json
+
+###
+
+POST https://connect.squareup.com/v2/catalog/search
+Square-Version: 2026-01-22
+Authorization: Bearer ACCESS_TOKEN
+Content-Type: application/json
+Content-Length: 164
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "object_types": [
+    "ITEM"
+  ],
+  "query": {
+    "prefix_query": {
+      "attribute_name": "name",
+      "attribute_prefix": "tea"
+    }
+  },
+  "limit": 100
+}
+
+<> 2026-02-18T151510.401.json
+
+###
+

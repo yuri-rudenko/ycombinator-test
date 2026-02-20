@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "category": "INVALID_REQUEST_ERROR",
+      "code": "INVALID_VALUE",
+      "detail": "[merchant_token=ML5NCMD0YN95G] Object `3SNDVX6SL67FOJNQPOJKAB3F` of type ITEM_VARIATION is enabled at all future locations, but the referenced object with token `MSGF4S2WTEDFX4HMMFW6ZU5M` of type ITEM is not.",
+      "field": "item_id"
+    }
+  ]
+}
